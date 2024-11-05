@@ -1,0 +1,11 @@
+package GDiem;
+
+import java.awt.event.ActionEvent;
+import java.sql.Connection;
+
+public interface IHocvien {
+	public Connection getCon();
+	public void getHVbyLop();
+	public void getHVbyLopGT();
+	void actionPerformed(ActionEvent e);
+}

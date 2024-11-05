@@ -1,0 +1,10 @@
+package BookPackage;
+
+public class GUIBook {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

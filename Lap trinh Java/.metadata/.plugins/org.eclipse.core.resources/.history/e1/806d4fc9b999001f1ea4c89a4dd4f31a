@@ -1,0 +1,11 @@
+package GDiem;
+
+public class Hocvien {
+	private String MaHV;
+	private String Hoten;
+	private String Lop;
+	private String GT;
+	private float Diem;
+	
+	
+}

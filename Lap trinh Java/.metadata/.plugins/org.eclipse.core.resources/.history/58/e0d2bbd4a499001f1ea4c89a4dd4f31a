@@ -1,0 +1,62 @@
+package GLuong;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import thuchanh.InternationalAirport;
+
+public class XLLuong {
+	private String URL = "jdbc:sqlserver://TOG:1433;databaseName=DLLuong;encrypt=false";
+	private String username = "sa";
+	private String password = "123456";
+	private Connection connection;
+	
+	public Connection getCon() {
+        Connection connection = null;
+        try {
+            // Kết nối tới cơ sở dữ liệu SQL Server
+            connection = DriverManager.getConnection(URL, username, password);
+            System.out.println("Kết nối tới cơ sở dữ liệu thành công.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Kết nối tới cơ sở dữ liệu thất bại.");
+        }
+        return connection;
+	}
+	
+	public void getNVbyMa() {
+        Connection connection = getCon();
+        String query = "SELECT * FROM tbNhanvien";
+
+        try (Statement stmt = connection.createStatement();
+            ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                String name = rs.getString("MaVN");
+                String code = rs.getString("Hoten");
+                String address = rs.getString("Diachi");
+                int runwayCount = rs.getInt("Luong");
+
+                
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                    System.out.println("Kết nối đã được đóng.");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+	}
+	
+	public void updateNV() {
+		
+	}
+}

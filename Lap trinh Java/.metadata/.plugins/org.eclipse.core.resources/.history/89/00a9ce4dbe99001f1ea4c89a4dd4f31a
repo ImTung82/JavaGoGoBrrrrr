@@ -1,0 +1,8 @@
+package GDiem;
+
+import java.sql.Connection;
+
+public interface IHocvien {
+	public Connection getCon();
+	public void getHVbyLop(String class);
+}

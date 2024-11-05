@@ -1,0 +1,7 @@
+package GSach;
+
+import java.sql.Connection;
+
+public interface ISach {
+	public Connection getCon();
+}

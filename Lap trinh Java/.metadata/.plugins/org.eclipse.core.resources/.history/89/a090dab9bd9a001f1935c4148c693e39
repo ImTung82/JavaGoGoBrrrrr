@@ -1,0 +1,22 @@
+package GSach;
+
+import javax.swing.JFrame;
+
+public class GUI_delSA extends JFrame {
+	public void appGUI() {
+        setTitle("Quản lý lương");
+        setSize(650, 300);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);  
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GUI_delSA gui = new GUI_delSA();
+		gui.appGUI();
+	}
+
+}

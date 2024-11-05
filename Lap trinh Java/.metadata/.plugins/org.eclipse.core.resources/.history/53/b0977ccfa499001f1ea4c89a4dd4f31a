@@ -1,0 +1,24 @@
+package GLuong;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+import thuchanh.AirportFrame;
+
+public class GUI_updateNV extends JFrame {
+	public static void appGUI() {
+		
+	}
+	
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+        // Đảm bảo giao diện người dùng được khởi tạo trên luồng sự kiện
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+            	appGUI();
+            }
+        });
+	}
+
+}

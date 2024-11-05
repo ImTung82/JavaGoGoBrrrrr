@@ -1,0 +1,14 @@
+package GDiem;
+
+public class GUI_findHV {
+	public void appGUI() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GUI_findHV gui = new GUI_findHV();
+		gui.appGUI();
+	}
+
+}

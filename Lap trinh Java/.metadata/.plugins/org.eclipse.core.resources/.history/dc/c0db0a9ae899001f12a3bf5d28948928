@@ -1,0 +1,84 @@
+package BookPackage;
+
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class GUIBook extends JFrame {
+	JLabel IDLabel, NameLabel, AuthorLabel, PriceLabel, YearLabel;
+	JTextField IDField, NameField, AuthorField, PriceField;
+	JComboBox<String> YearCB;
+	JButton addButton, updateButton;
+	
+	public void appGUI() {
+        setTitle("Quản lý sách");
+        setSize(650, 900);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
+        
+        JPanel inputPanel = new JPanel(new GridLayout(0, 2, 15, 15));
+        inputPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        
+        IDLabel = new JLabel("Mã sách:");
+        IDField = new JTextField();
+        IDField.setEditable(false);
+        inputPanel.add(IDLabel);
+        inputPanel.add(IDField);
+        
+        NameLabel = new JLabel("Tên sách:");
+        NameField = new JTextField();
+        inputPanel.add(NameLabel);
+        inputPanel.add(NameField);
+        
+        YearLabel = new JLabel("Năm xuất bản:");
+        inputPanel.add(YearLabel);
+        YearCB = new JComboBox<>(new String[] {"2018", "2019", "2020"});
+        inputPanel.add(YearCB);
+        
+        AuthorLabel = new JLabel("Tác giả:");
+        AuthorField = new JTextField();
+        inputPanel.add(AuthorLabel);
+        inputPanel.add(AuthorField);
+        
+        PriceLabel = new JLabel("Giá bán:");
+        PriceField = new JTextField();
+        inputPanel.add(PriceLabel);
+        inputPanel.add(PriceField);
+        
+        add(inputPanel, BorderLayout.NORTH);
+        
+        JPanel buttonMenuPanel = new JPanel(new FlowLayout());
+        buttonMenuPanel.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20)); // Trên, trái, dưới, phải
+        
+        addButton = new JButton("Add Book");
+        buttonMenuPanel.add(addButton);
+//        addButton.addActionListener(actionListener);
+        
+        
+        buttonMenuPanel.add(new JLabel(" || "));
+        
+        updateButton = new JButton("Update Book");
+        buttonMenuPanel.add(updateButton);
+//        updateButton.addActionListener(actionListener);
+        
+        add(buttonMenuPanel, BorderLayout.SOUTH);
+        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);  
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GUIBook gui = new GUIBook();
+		gui.appGUI();
+	}
+
+}

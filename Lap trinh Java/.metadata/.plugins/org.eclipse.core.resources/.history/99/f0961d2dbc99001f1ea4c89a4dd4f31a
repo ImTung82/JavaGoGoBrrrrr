@@ -1,0 +1,39 @@
+package GDiem;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+
+public class GUI_findHV extends JFrame {
+	private JComboBox<String> lopComboBox;
+	private JRadioButton GTRadioButton;
+	private JButton searchButton;
+	private JTable studentTable;
+	private JLabel lopLabel, GTLabel;
+	
+	public void appGUI() {
+        setTitle("Quản lý điểm");
+        setSize(650, 300);
+        setLocationRelativeTo(null);
+        setLayout(new BorderLayout());
+        
+        JPanel inputPanel = new JPanel(new GridLayout(0, 0, 2, 10));
+        
+        lopLabel = new JLabel("Lớp");
+        
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GUI_findHV gui = new GUI_findHV();
+		gui.appGUI();
+	}
+
+}

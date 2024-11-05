@@ -1,0 +1,11 @@
+package GSach;
+
+import java.sql.Connection;
+
+public interface ISach {
+	Connection getCon();
+
+	void getSA();
+
+	void getSAbyNXBGB();
+}

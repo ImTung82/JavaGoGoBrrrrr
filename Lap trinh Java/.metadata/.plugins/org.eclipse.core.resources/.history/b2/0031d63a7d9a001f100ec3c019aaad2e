@@ -1,0 +1,25 @@
+package GSach;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+public class GUI_findSA {
+	JLabel NhaXBLabel, GiaBLabel;
+	JComboBox<String> NhaXBCB;
+	JTextField GiaBTextField;
+	JButton searchButton;
+	JTable saList;
+	
+	public void appGUI() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		GUI_findSA gui = new GUI_findSA();
+		gui.appGUI();
+	}
+}

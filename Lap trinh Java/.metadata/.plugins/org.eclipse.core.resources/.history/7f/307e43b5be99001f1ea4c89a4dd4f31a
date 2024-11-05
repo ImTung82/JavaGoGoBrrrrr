@@ -1,0 +1,63 @@
+package GDiem;
+
+import java.awt.event.ActionEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.swing.JButton;
+
+import GDiem.GUI_findHV;
+
+public class XLDiem implements IHocvien {
+	private String URL = "jdbc:sqlserver://TOG:1433;databaseName=DLLuong;encrypt=false";
+	private String username = "sa";
+	private String password = "123456";
+	private Connection connection;
+	
+    private GUI_findHV gui;
+
+    // Constructor nhận tham chiếu đến GUI_updateNV
+    public XLDiem(GUI_findHV gui) {
+        this.gui = gui;
+    }
+	
+	@Override
+	public Connection getCon() {
+        Connection connection = null;
+        try {
+            // Kết nối tới cơ sở dữ liệu SQL Server
+            connection = DriverManager.getConnection(URL, username, password);
+            System.out.println("Kết nối tới cơ sở dữ liệu thành công.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Kết nối tới cơ sở dữ liệu thất bại.");
+        }
+        return connection;
+	}
+
+	@Override
+	public void getHVbyLop() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void getHVbyLopGT() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+        JButton sourceButton = (JButton)e.getSource();
+
+        if (sourceButton == gui.searchButton) {
+            String maNV = gui.searchField.getText();
+            getNVbyMa(maNV);
+        } else if (sourceButton == gui.updateButton) {
+            updateNV();
+        }
+	}
+}

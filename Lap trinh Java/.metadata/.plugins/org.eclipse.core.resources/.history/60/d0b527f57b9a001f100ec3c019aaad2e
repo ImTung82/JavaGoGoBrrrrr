@@ -1,0 +1,5 @@
+package GSach;
+
+public interface ISach {
+	public void getCon();
+}

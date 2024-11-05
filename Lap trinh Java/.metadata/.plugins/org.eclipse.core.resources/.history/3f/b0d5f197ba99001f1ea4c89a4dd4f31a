@@ -1,0 +1,13 @@
+package GDiem;
+
+public class GIUI_findHV {
+	public void appGUI() {
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

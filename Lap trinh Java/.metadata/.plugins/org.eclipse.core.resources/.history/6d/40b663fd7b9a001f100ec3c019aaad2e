@@ -1,0 +1,39 @@
+package GSach;
+
+import java.sql.Connection;
+
+public class XLSach implements ISach {
+	private String URL = "jdbc:sqlserver://TOG:1433;databaseName=DLLuong;encrypt=false";
+	private String username = "sa";
+	private String password = "123456";
+	private Connection connection;
+	
+	public Connection getCon() {
+        Connection connection = null;
+        try {
+            // Kết nối tới cơ sở dữ liệu SQL Server
+            connection = DriverManager.getConnection(URL, username, password);
+            System.out.println("Kết nối tới cơ sở dữ liệu thành công.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("Kết nối tới cơ sở dữ liệu thất bại.");
+        }
+        return connection;
+	}
+	
+	Trong xử lý hàm:
+	
+	
+	Main trong GUI:
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+        // Đảm bảo giao diện người dùng được khởi tạo trên luồng sự kiện
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                GUI_updateNV gui = new GUI_updateNV(); // Tạo đối tượng GUI_updateNV
+                gui.appGUI(); // Gọi phương thức appGUI() trên đối tượng
+            }
+        });
+	}
+}
